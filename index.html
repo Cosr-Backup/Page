@@ -1,99 +1,114 @@
-﻿<!DOCTYPE html>
-<html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>渣渣の主页</title>
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-<link rel="stylesheet" href="css/style.css">
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>渣渣の主页</title>
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel='stylesheet prefetch' href='css/demo.css'>
+  <link rel="stylesheet" href="css/style.css">
+<style>
 
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<!--[if IE]>
-		<script src="js/html5.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		
-		<div class="container demo-1">
-			<div class="content">
-				<div id="large-header" class="large-header">
-					
+@font-face {
+	font-family: 'Digital-7';
+	src: url(./font/digital-7.ttf);
+}
 
-  <div style="position:absolute;left: 650px; top:180px;"  class="time" id="time" data-hours="" data-minutes="">
-  <div class="digit">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
-  <div class="digit">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
-  <div class="digit">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
-  <div class="digit">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
-  <div class="digit">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
-  <div class="digit">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
+@font-face {
+	font-family: 'Got No Time For That';
+	src: url(./font/Got_No_Time_For_That.ttf);
+}
 
+body {
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
 
+}
+
+a img {
+	width: 25px;
+}
+
+p {
+	font-family: Got No Time For That;
+	font-size:12pt;
+	font-weight:100;
+	text-shadow: 1px 1px 1px #000;
+	color: #ffffff;
+}
+
+</style>
+ <script>
+ setInterval(function(){
+  var date = new Date();
+  var format = [
+      ("0" + date.getHours()).substr(-2)
+    , ("0" + date.getMinutes()).substr(-2)
+    , ("0" + date.getSeconds()).substr(-2)
+  ].join(":");
+   
+  document.getElementById("output").innerHTML = format;
+}, 500);
+</script>
+<script type="text/javascript">
+
+function playPause() {
+  var myAudio = document.getElementById('myvideo');
+  if (myAudio.paused)
+    myAudio.play();
+  else
+    myAudio.pause();
+}
+
+</script>
+</head>
+
+<body>
+  <div id="container">
+    <img src="./images/1.jpg">
+    <img src="./images/2.jpg">
+	<img src="./images/3.jpg">
+	<img src="./images/4.jpg">
 </div>
+  <div id="large-header" class="large-header">
 
-				<canvas  id="demo-canvas"></canvas>	
-			</div>
-			</div>
-			
-			</div><!-- /container -->
-			
-			<script src="js/TweenLite.min.js"></script>
-			<script src="js/EasePack.min.js"></script>
-			<script src="js/rAF.js"></script>
-			<script src="js/demo-1.js"></script>
-
-<script src='js/Rx.min.js'></script>
-<script src='js/rxcss.min.js'></script>
+  <canvas id="demo-canvas"></canvas>
+    <h1 class="main-title"><div id="output"></div>
+	<div>
+	<p><input type="button" onclick="playPause()" value=""><span style="color:white">  Fate/Grand Order</span>
+<button id="volup" onclick="document.getElementById('myvideo').volume += 0.1"></button> 
+ <button id="voldown" onclick="document.getElementById('myvideo').volume -= 0.1"></button> 
+	</p>
+	</div>
+	</h1>
+<script src="js/Pack.min.js"></script>
+<script src="js/node.js"></script>
+<script src="js/Lite.min.js"></script>
 <script src="js/index.js"></script>
-<embed src="http://music.163.com/style/swf/widget.swf?sid=459942286&type=2&auto=1&width=320&height=66" width="0" height="0" >
-		</body>
-	</html>
+</div>
+<div id="video">
+<input type=button onclick="playPause()" value="Play/Pause">
+<video src="assets/video1.ogg" id="myvideo" width="320" height="240" autoplay>
+</video>
+
+<script>
+var myvid = document.getElementById('myvideo');
+var myvids = [
+  "assets/video1.ogg",
+  "assets/video2.ogg",
+  "assets/video3.ogg"
+  ];
+var activeVideo = 0;
+
+myvid.addEventListener('ended', function(e) {
+  // update the active video index
+  activeVideo = (++activeVideo) % myvids.length;
+
+  // update the video source and play
+  myvid.src = myvids[activeVideo];
+  myvid.play();
+});
+</script>
+</div>
+</body>
+</html>
