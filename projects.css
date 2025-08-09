@@ -1,0 +1,59 @@
+:root{
+  --glass-bg: rgba(255,255,255,.6);
+  --glass-bd: rgba(0,0,0,.06);
+}
+[data-bs-theme="dark"]:root{
+  --glass-bg: rgba(33,37,41,.55);
+  --glass-bd: rgba(255,255,255,.08);
+}
+
+.bg-gradient-subtle{
+  background: linear-gradient(180deg, rgba(108,117,125,.06), transparent 40%),
+              linear-gradient(0deg, rgba(13,110,253,.045), transparent 60%);
+}
+
+.navbar-blur{
+  backdrop-filter: saturate(1.5) blur(8px);
+  background: var(--glass-bg);
+  border-bottom: 1px solid var(--glass-bd);
+}
+
+.hero-visual{
+  background: radial-gradient(1200px 400px at 100% 0%, rgba(13,110,253,.2), transparent 60%),
+              radial-gradient(900px 300px at 0% 100%, rgba(25,135,84,.2), transparent 60%),
+              linear-gradient(135deg, rgba(255,255,255,.4), rgba(255,255,255,.1));
+}
+
+.project-card{
+  border: 1px solid var(--glass-bd);
+  background: var(--glass-bg);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.project-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+.icon-wrap{
+  width: 48px; height: 48px;
+  display: inline-grid; place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(13,110,253,.18), rgba(13,110,253,.08));
+  color: #0d6efd; font-size: 1.25rem;
+}
+[data-bs-theme="dark"] .icon-wrap{
+  background: linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.06));
+  color: #6ea8fe;
+}
+
+/* 微调导航栏 GitHub 图标基线，使其与文字更平齐 */
+.navbar .btn .fa-github{ position: relative; top: 3px; }
+
+.border-top-subtle{border-top:1px solid var(--glass-bd)}
+.opacity-10{opacity:.1}
+
+/* reveal */
+.reveal{opacity:0; transform: translateY(8px); transition: opacity .45s ease, transform .45s ease}
+.reveal-visible{opacity:1; transform:none}
+
+

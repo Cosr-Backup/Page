@@ -1,40 +1,244 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>渣渣の主页</title>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/stylesheet.css" rel="stylesheet">
+<!doctype html>
+<html lang="zh-CN" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Silentely · 个人项目主页</title>
+    <meta name="description" content="Silentely 的个人项目主页：eSIM 工具集、Bili-Calendar、AdBlock-Acceleration、Demo 脚本工具箱" />
+    <meta name="color-scheme" content="light dark" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <link href="./projects.css" rel="stylesheet" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZK4FWZH3Z9"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){dataLayer.push(arguments);} // eslint-disable-line
       gtag('js', new Date());
       gtag('config', 'G-ZK4FWZH3Z9');
-</script>
-</head>
-<body>
-    <div id="particles-js"></div>
+    </script>
+  </head>
+  <body class="bg-gradient-subtle">
+    <nav class="navbar navbar-expand-lg navbar-blur sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="#">
+          <i class="fa-brands fa-github me-2"></i>Silentely · Projects
+        </a>
+        <div class="d-flex align-items-center gap-2 ms-auto">
+          <a class="btn btn-sm btn-outline-secondary d-none d-md-inline-flex" href="https://github.com/Silentely" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-2"></i>GitHub
+          </a>
+          <button id="themeToggle" class="btn btn-sm btn-outline-primary" aria-label="切换主题">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
 
-    <div class="content text-md-center">
-        <div class="inner">
-            <div class="timeblock">
-                <h6 class="date"></h6>
-                <h1 class="time"></h1>
-                <h4 class="seconds">60s</h4>
+    <header class="hero container py-5">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-7">
+          <h1 class="display-5 fw-bold mb-3">个人项目主页</h1>
+          <p class="lead text-secondary-emphasis mb-4">
+            收录了近期在用/维护的四个项目：eSIM 工具集、Bili-Calendar、AdBlock-Acceleration 与 Demo 脚本工具箱。
+            每个卡片提供项目简介、公共访问地址与仓库主页。
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge rounded-pill text-bg-primary">Bootstrap 5</span>
+            <span class="badge rounded-pill text-bg-info">Responsive</span>
+            <span class="badge rounded-pill text-bg-warning text-dark">Dark Mode</span>
+            <span class="badge rounded-pill text-bg-success">Minimal</span>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5 text-lg-end">
+          <div class="hero-visual ratio ratio-16x9 rounded-4 border"></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container pb-5">
+      <div class="row g-4">
+        <!-- eSIM Tools -->
+        <div class="col-12 col-md-6">
+          <div class="card project-card h-100 reveal">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <div class="icon-wrap me-3"><i class="fa-solid fa-sim-card"></i></div>
+                <div>
+                  <h5 class="card-title mb-1">eSIM 工具集</h5>
+                  <div class="small text-secondary">Giffgaff / Simyo · 申请 / 更换 / 二维码生成</div>
+                </div>
+              </div>
+              <p class="card-text text-secondary mb-3">
+                专为 Giffgaff 与 Simyo 用户设计的 eSIM 管理工具集，覆盖完整申请流程、设备更换与 LPA 激活码生成，前端 UI 友好、性能优化完善。
+              </p>
+              <div class="mb-3 d-flex flex-wrap gap-2">
+                <span class="badge text-bg-primary">Serverless</span>
+                <span class="badge text-bg-secondary">Netlify</span>
+                <span class="badge text-bg-success">QR / LPA</span>
+                <span class="badge text-bg-dark">OAuth 2.0 PKCE</span>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-primary" href="https://esim.cosr.eu.org" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>访问站点
+                </a>
+                <a class="btn btn-outline-secondary" href="https://github.com/Silentely/esim-tools" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-github me-2"></i>项目主页
+                </a>
+              </div>
             </div>
+          </div>
         </div>
 
-    </div>
+        <!-- Bili-Calendar -->
+        <div class="col-12 col-md-6">
+          <div class="card project-card h-100 reveal">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <div class="icon-wrap me-3"><i class="fa-solid fa-calendar-days"></i></div>
+                <div>
+                  <h5 class="card-title mb-1">Bili-Calendar</h5>
+                  <div class="small text-secondary">B 站追番 → 订阅日历（ICS）</div>
+                </div>
+              </div>
+              <p class="card-text text-secondary mb-3">
+                将 B 站追番列表一键转换为日历订阅，支持 Apple / Google / Outlook 等主流日历应用，内置暗黑模式、番剧预览、PWA 与缓存优化。
+              </p>
+              <div class="mb-3 d-flex flex-wrap gap-2">
+                <span class="badge text-bg-info">PWA</span>
+                <span class="badge text-bg-primary">ICS</span>
+                <span class="badge text-bg-warning text-dark">Dark Mode</span>
+                <span class="badge text-bg-success">Docker</span>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-primary" href="https://calendar.cosr.eu.org" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>访问站点
+                </a>
+                <a class="btn btn-outline-secondary" href="https://github.com/Silentely/bili-calendar" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-github me-2"></i>项目主页
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <script src="assets/js/jquery-3.1.1.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/particles.min.js"></script>
-    <script src="assets/js/app.js"></script>
-<!--<script src="assets/js/sorry_we_have_not_icp.js"></script>-->
-</body>
+        <!-- AdBlock-Acceleration -->
+        <div class="col-12 col-md-6">
+          <div class="card project-card h-100 reveal">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <div class="icon-wrap me-3"><i class="fa-solid fa-shield-halved"></i></div>
+                <div>
+                  <h5 class="card-title mb-1">AdBlock-Acceleration</h5>
+                  <div class="small text-secondary">去广告规则加速镜像与索引</div>
+                </div>
+              </div>
+              <p class="card-text text-secondary mb-3">
+                为 AdGuard / uBlock / AdGuard Home 等提供“加速订阅”，多镜像冗余与一键复制/搜索，零代理即可快速更新常见规则。
+              </p>
+              <div class="mb-3 d-flex flex-wrap gap-2">
+                <span class="badge text-bg-secondary">CDN</span>
+                <span class="badge text-bg-success">镜像冗余</span>
+                <span class="badge text-bg-dark">索引页</span>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-primary" href="https://raw.cosr.eu.org" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>在线镜像/索引
+                </a>
+                <a class="btn btn-outline-secondary" href="https://github.com/Silentely/AdBlock-Acceleration" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-github me-2"></i>项目主页
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo toolbox -->
+        <div class="col-12 col-md-6">
+          <div class="card project-card h-100 reveal">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <div class="icon-wrap me-3"><i class="fa-solid fa-terminal"></i></div>
+                <div>
+                  <h5 class="card-title mb-1">Demo · 脚本工具箱</h5>
+                  <div class="small text-secondary">系统 / 网络 / Docker / SSH 等</div>
+                </div>
+              </div>
+              <p class="card-text text-secondary mb-3">
+                纯自用脚本集合，包含系统优化、网络代理、镜像切换、Docker 安装等；可通过 Raw 链接直接一键执行。
+              </p>
+              <div class="mb-3 d-flex flex-wrap gap-2">
+                <span class="badge text-bg-dark">Shell</span>
+                <span class="badge text-bg-secondary">Linux</span>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-outline-secondary" href="https://github.com/Silentely/Demo" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-github me-2"></i>项目主页
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-5 opacity-10" />
+      <section class="text-center text-secondary small">
+        <p class="mb-1">以上“公共访问”链接来自各项目 README 与配置。</p>
+        <p class="mb-0">如链接更新，请以各项目仓库 README 为准。</p>
+      </section>
+    </main>
+
+    <footer class="py-4 border-top-subtle">
+      <div class="container d-flex flex-column flex-sm-row align-items-center justify-content-between gap-2">
+        <div class="small text-secondary">© <span id="year"></span> Silentely</div>
+        <div class="d-flex align-items-center gap-3 small">
+          <a class="text-decoration-none" href="https://github.com/Silentely" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a>
+          <span class="text-secondary">·</span>
+          <a class="text-decoration-none" href="#top">回到顶部</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // 主题切换（记忆于 localStorage）
+      (function () {
+        const key = 'prefers-color-scheme';
+        const btn = document.getElementById('themeToggle');
+        const apply = (mode) => document.documentElement.setAttribute('data-bs-theme', mode);
+        const saved = localStorage.getItem(key);
+        if (saved) apply(saved);
+        btn?.addEventListener('click', () => {
+          const current = document.documentElement.getAttribute('data-bs-theme') || 'auto';
+          const next = current === 'dark' ? 'light' : 'dark';
+          apply(next);
+          localStorage.setItem(key, next);
+          btn.innerHTML = next === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+        });
+        // 初次渲染图标
+        btn.innerHTML = (saved === 'dark') ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+      })();
+
+      // Reveal 动效
+      (function () {
+        const els = document.querySelectorAll('.reveal');
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('reveal-visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        els.forEach((el) => io.observe(el));
+      })();
+
+      // 年份
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>
+
+
