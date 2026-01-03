@@ -1,307 +1,373 @@
-<!doctype html>
-<html lang="zh-CN" data-bs-theme="auto">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Silentely · 个人项目主页</title>
-    <meta name="description" content="Silentely 的个人项目主页：eSIM 工具集、Bili-Calendar、AdBlock-Acceleration、Demo 脚本工具箱、Nexus Terminal、fuckits" />
-    <meta name="color-scheme" content="light dark" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
-    <link href="./projects.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silentely · 未来项目矩阵</title>
+    <meta name="description" content="Silentely 的个人项目主页：eSIM 工具集、Bili-Calendar、AdBlock-Acceleration、Demo 脚本工具箱、Nexus Terminal、fuckits">
+    <meta name="color-scheme" content="dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./projects.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZK4FWZH3Z9"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);} // eslint-disable-line
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-ZK4FWZH3Z9');
     </script>
-  </head>
-  <body class="bg-gradient-subtle">
-    <nav class="navbar navbar-expand-lg navbar-blur sticky-top">
-      <div class="container">
-        <a class="navbar-brand fw-semibold" href="#">
-          <i class="fa-brands fa-github me-2"></i>Silentely · Projects
-        </a>
-        <div class="d-flex align-items-center gap-2 ms-auto">
-          <a class="btn btn-sm btn-outline-secondary d-none d-md-inline-flex" href="https://github.com/Silentely" target="_blank" rel="noopener">
-            <i class="fa-brands fa-github me-2"></i>GitHub
-          </a>
-          <button id="themeToggle" class="btn btn-sm btn-outline-primary" aria-label="切换主题">
-            <i class="fa-solid fa-moon"></i>
-          </button>
+</head>
+<body>
+    <!-- 粒子背景画布 -->
+    <canvas id="particles"></canvas>
+
+    <!-- 扫描线效果 -->
+    <div class="scanlines"></div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="brand-icon">◢</span>
+                <span class="brand-text">SILENTELY</span>
+                <span class="brand-subtitle">// PROJECT_MATRIX</span>
+            </div>
+            <div class="nav-actions">
+                <a href="https://github.com/Silentely" target="_blank" rel="noopener" class="nav-link">
+                    <span class="link-text">GITHUB</span>
+                    <span class="link-icon">↗</span>
+                </a>
+            </div>
         </div>
-      </div>
     </nav>
 
-    <header class="hero container py-5">
-      <div class="row align-items-center g-4">
-        <div class="col-12 col-lg-7">
-          <h1 class="display-5 fw-bold mb-3">个人项目主页</h1>
-          <p class="lead text-secondary-emphasis mb-4">
-            收录了近期在用/维护的六个项目：eSIM 工具集、Bili-Calendar、AdBlock-Acceleration、Demo 脚本工具箱、Nexus Terminal 与 fuckits。
-            每个卡片提供项目简介、公共访问地址与仓库主页。
-          </p>
-          <div class="d-flex flex-wrap gap-2">
-            <span class="badge rounded-pill text-bg-primary">Bootstrap 5</span>
-            <span class="badge rounded-pill text-bg-info">Responsive</span>
-            <span class="badge rounded-pill text-bg-warning text-dark">Dark Mode</span>
-            <span class="badge rounded-pill text-bg-success">Minimal</span>
-          </div>
-        </div>
-        <div class="col-12 col-lg-5 text-lg-end">
-          <div class="hero-visual ratio ratio-16x9 rounded-4 border"></div>
-        </div>
-      </div>
-    </header>
-
-    <main class="container pb-5">
-      <div class="row g-4">
-        <!-- eSIM Tools -->
-        <div class="col-12 col-md-6">
-          <div class="card project-card h-100 reveal">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <div class="icon-wrap me-3"><i class="fa-solid fa-sim-card"></i></div>
-                <div>
-                  <h5 class="card-title mb-1">eSIM 工具集</h5>
-                  <div class="small text-secondary">Giffgaff / Simyo · 申请 / 更换 / 二维码生成</div>
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">
+                    <span class="label-dot"></span>
+                    <span>SYSTEM_ONLINE</span>
                 </div>
-              </div>
-              <p class="card-text text-secondary mb-3">
-                专为 Giffgaff 与 Simyo 用户设计的 eSIM 管理工具集，覆盖完整申请流程、设备更换与 LPA 激活码生成，前端 UI 友好、性能优化完善。
-              </p>
-              <div class="mb-3 d-flex flex-wrap gap-2">
-                <span class="badge text-bg-primary">Serverless</span>
-                <span class="badge text-bg-secondary">Netlify</span>
-                <span class="badge text-bg-success">QR / LPA</span>
-                <span class="badge text-bg-dark">OAuth 2.0 PKCE</span>
-              </div>
-              <div class="d-flex flex-wrap gap-2">
-                <a class="btn btn-primary" href="https://esim.cosr.eu.org" target="_blank" rel="noopener">
-                  <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>访问站点
-                </a>
-                <a class="btn btn-outline-secondary" href="https://github.com/Silentely/eSIM-Tools" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-github me-2"></i>项目主页
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bili-Calendar -->
-        <div class="col-12 col-md-6">
-          <div class="card project-card h-100 reveal">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <div class="icon-wrap me-3"><i class="fa-solid fa-calendar-days"></i></div>
-                <div>
-                  <h5 class="card-title mb-1">Bili-Calendar</h5>
-                  <div class="small text-secondary">B 站追番 → 订阅日历（ICS）</div>
+                <h1 class="hero-title">
+                    <span class="title-line" data-text="PROJECT">PROJECT</span>
+                    <span class="title-line" data-text="MATRIX">MATRIX</span>
+                </h1>
+                <p class="hero-description">
+                    六个维度的技术探索 // eSIM 工具集 · Bili-Calendar · AdBlock-Acceleration<br>
+                    Demo 脚本工具箱 · Nexus Terminal · fuckits
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">06</div>
+                        <div class="stat-label">PROJECTS</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-value">∞</div>
+                        <div class="stat-label">POSSIBILITIES</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">ACTIVE</div>
+                    </div>
                 </div>
-              </div>
-              <p class="card-text text-secondary mb-3">
-                将 B 站追番列表一键转换为日历订阅，支持 Apple / Google / Outlook 等主流日历应用，内置暗黑模式、番剧预览、PWA 与缓存优化。
-              </p>
-              <div class="mb-3 d-flex flex-wrap gap-2">
-                <span class="badge text-bg-info">PWA</span>
-                <span class="badge text-bg-primary">ICS</span>
-                <span class="badge text-bg-warning text-dark">Dark Mode</span>
-                <span class="badge text-bg-success">Docker</span>
-              </div>
-              <div class="d-flex flex-wrap gap-2">
-                <a class="btn btn-primary" href="https://calendar.cosr.eu.org" target="_blank" rel="noopener">
-                  <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>访问站点
-                </a>
-                <a class="btn btn-outline-secondary" href="https://github.com/Silentely/Bili-Calendar" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-github me-2"></i>项目主页
-                </a>
-              </div>
             </div>
-          </div>
-        </div>
-
-        <!-- AdBlock-Acceleration -->
-        <div class="col-12 col-md-6">
-          <div class="card project-card h-100 reveal">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <div class="icon-wrap me-3"><i class="fa-solid fa-shield-halved"></i></div>
-                <div>
-                  <h5 class="card-title mb-1">AdBlock-Acceleration</h5>
-                  <div class="small text-secondary">去广告规则加速镜像与索引</div>
+            <div class="hero-visual">
+                <div class="hologram-container">
+                    <div class="hologram-ring"></div>
+                    <div class="hologram-ring"></div>
+                    <div class="hologram-ring"></div>
+                    <div class="hologram-core"></div>
                 </div>
-              </div>
-              <p class="card-text text-secondary mb-3">
-                为 AdGuard / uBlock / AdGuard Home 等提供“加速订阅”，多镜像冗余与一键复制/搜索，零代理即可快速更新常见规则。
-              </p>
-              <div class="mb-3 d-flex flex-wrap gap-2">
-                <span class="badge text-bg-secondary">CDN</span>
-                <span class="badge text-bg-success">镜像冗余</span>
-                <span class="badge text-bg-dark">索引页</span>
-              </div>
-              <div class="d-flex flex-wrap gap-2">
-                <a class="btn btn-primary" href="https://raw.cosr.eu.org" target="_blank" rel="noopener">
-                  <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>在线镜像/索引
-                </a>
-                <a class="btn btn-outline-secondary" href="https://github.com/Silentely/AdBlock-Acceleration" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-github me-2"></i>项目主页
-                </a>
-              </div>
             </div>
-          </div>
         </div>
+    </section>
 
-        <!-- Demo toolbox -->
-        <div class="col-12 col-md-6">
-          <div class="card project-card h-100 reveal">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <div class="icon-wrap me-3"><i class="fa-solid fa-terminal"></i></div>
-                <div>
-                  <h5 class="card-title mb-1">Demo · 脚本工具箱</h5>
-                  <div class="small text-secondary">系统 / 网络 / Docker / SSH 等</div>
+    <!-- 项目网格 -->
+    <section class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-bracket">[</span>
+                    <span>ACTIVE_PROJECTS</span>
+                    <span class="title-bracket">]</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- eSIM Tools -->
+                <article class="project-card" data-index="01">
+                    <div class="card-glow"></div>
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="5" y="2" width="14" height="20" rx="2"/>
+                                    <path d="M9 6h6M9 10h6M9 14h6"/>
+                                </svg>
+                            </div>
+                            <div class="card-meta">
+                                <span class="card-index">01</span>
+                                <span class="card-status">ACTIVE</span>
+                            </div>
+                        </div>
+                        <h3 class="card-title">eSIM 工具集</h3>
+                        <p class="card-subtitle">Giffgaff / Simyo · 申请 / 更换 / 二维码生成</p>
+                        <p class="card-description">
+                            专为 Giffgaff 与 Simyo 用户设计的 eSIM 管理工具集，覆盖完整申请流程、设备更换与 LPA 激活码生成，前端 UI 友好、性能优化完善。
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Serverless</span>
+                            <span class="tag">Netlify</span>
+                            <span class="tag">QR/LPA</span>
+                            <span class="tag">OAuth 2.0</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://esim.cosr.eu.org" target="_blank" rel="noopener" class="btn btn-primary">
+                                <span>访问站点</span>
+                                <span class="btn-arrow">→</span>
+                            </a>
+                            <a href="https://github.com/Silentely/eSIM-Tools" target="_blank" rel="noopener" class="btn btn-secondary">
+                                <span>项目主页</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Bili-Calendar -->
+                <article class="project-card" data-index="02">
+                    <div class="card-glow"></div>
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2"/>
+                                    <path d="M16 2v4M8 2v4M3 10h18"/>
+                                </svg>
+                            </div>
+                            <div class="card-meta">
+                                <span class="card-index">02</span>
+                                <span class="card-status">ACTIVE</span>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Bili-Calendar</h3>
+                        <p class="card-subtitle">B 站追番 → 订阅日历（ICS）</p>
+                        <p class="card-description">
+                            将 B 站追番列表一键转换为日历订阅，支持 Apple / Google / Outlook 等主流日历应用，内置暗黑模式、番剧预览、PWA 与缓存优化。
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">PWA</span>
+                            <span class="tag">ICS</span>
+                            <span class="tag">Dark Mode</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://calendar.cosr.eu.org" target="_blank" rel="noopener" class="btn btn-primary">
+                                <span>访问站点</span>
+                                <span class="btn-arrow">→</span>
+                            </a>
+                            <a href="https://github.com/Silentely/Bili-Calendar" target="_blank" rel="noopener" class="btn btn-secondary">
+                                <span>项目主页</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- AdBlock-Acceleration -->
+                <article class="project-card" data-index="03">
+                    <div class="card-glow"></div>
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <div class="card-meta">
+                                <span class="card-index">03</span>
+                                <span class="card-status">ACTIVE</span>
+                            </div>
+                        </div>
+                        <h3 class="card-title">AdBlock-Acceleration</h3>
+                        <p class="card-subtitle">去广告规则加速镜像与索引</p>
+                        <p class="card-description">
+                            为 AdGuard / uBlock / AdGuard Home 等提供"加速订阅"，多镜像冗余与一键复制/搜索，零代理即可快速更新常见规则。
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">CDN</span>
+                            <span class="tag">镜像冗余</span>
+                            <span class="tag">索引页</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://raw.cosr.eu.org" target="_blank" rel="noopener" class="btn btn-primary">
+                                <span>在线镜像/索引</span>
+                                <span class="btn-arrow">→</span>
+                            </a>
+                            <a href="https://github.com/Silentely/AdBlock-Acceleration" target="_blank" rel="noopener" class="btn btn-secondary">
+                                <span>项目主页</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Demo toolbox -->
+                <article class="project-card" data-index="04">
+                    <div class="card-glow"></div>
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="4 17 10 11 4 5"/>
+                                    <line x1="12" y1="19" x2="20" y2="19"/>
+                                </svg>
+                            </div>
+                            <div class="card-meta">
+                                <span class="card-index">04</span>
+                                <span class="card-status">ACTIVE</span>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Demo · 脚本工具箱</h3>
+                        <p class="card-subtitle">系统 / 网络 / Docker / SSH 等</p>
+                        <p class="card-description">
+                            纯自用脚本集合，包含系统优化、网络代理、镜像切换、Docker 安装等；可通过 Raw 链接直接一键执行。
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Shell</span>
+                            <span class="tag">Linux</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://github.com/Silentely/Demo" target="_blank" rel="noopener" class="btn btn-secondary">
+                                <span>项目主页</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Nexus Terminal -->
+                <article class="project-card" data-index="05">
+                    <div class="card-glow"></div>
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                    <path d="M8 21h8M12 17v4"/>
+                                </svg>
+                            </div>
+                            <div class="card-meta">
+                                <span class="card-index">05</span>
+                                <span class="card-status">ACTIVE</span>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Nexus Terminal · 星枢终端</h3>
+                        <p class="card-subtitle">Web SSH / RDP / VNC 客户端</p>
+                        <p class="card-description">
+                            现代化、功能丰富的远程连接客户端，支持 SSH/SFTP 多标签、RDP/VNC、Monaco 在线编辑、PWA、2FA 与人机验证等安全机制，并提供本地桌面端。
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">SSH/SFTP</span>
+                            <span class="tag">RDP/VNC</span>
+                            <span class="tag">PWA</span>
+                            <span class="tag">2FA</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://github.com/Silentely/nexus-terminal/releases/latest" target="_blank" rel="noopener" class="btn btn-primary">
+                                <span>最新 Release</span>
+                                <span class="btn-arrow">→</span>
+                            </a>
+                            <a href="https://github.com/Silentely/nexus-terminal" target="_blank" rel="noopener" class="btn btn-secondary">
+                                <span>项目主页</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- fuckits -->
+                <article class="project-card" data-index="06">
+                    <div class="card-glow"></div>
+                    <div class="card-border"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                </svg>
+                            </div>
+                            <div class="card-meta">
+                                <span class="card-index">06</span>
+                                <span class="card-status">ACTIVE</span>
+                            </div>
+                        </div>
+                        <h3 class="card-title">fuckits</h3>
+                        <p class="card-subtitle">自然语言 → Shell 命令（AI CLI）</p>
+                        <p class="card-description">
+                            基于 AI 的命令行工具：把你的自然语言需求转换为可执行的 Shell 命令，并内置三级安全检测与交互式确认；支持中英文双语与跨平台安装。
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">CLI</span>
+                            <span class="tag">Shell</span>
+                            <span class="tag">安全检测</span>
+                            <span class="tag">双语</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://fuckits.25500552.xyz/zh" target="_blank" rel="noopener" class="btn btn-primary">
+                                <span>一键安装</span>
+                                <span class="btn-arrow">→</span>
+                            </a>
+                            <a href="https://github.com/Silentely/fuckits" target="_blank" rel="noopener" class="btn btn-secondary">
+                                <span>项目主页</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-brand">
+                        <span class="brand-icon">◢</span>
+                        <span>SILENTELY</span>
+                    </div>
+                    <p class="footer-text">以上"公共访问"链接来自各项目 README 与配置。如链接更新，请以各项目仓库 README 为准。</p>
                 </div>
-              </div>
-              <p class="card-text text-secondary mb-3">
-                纯自用脚本集合，包含系统优化、网络代理、镜像切换、Docker 安装等；可通过 Raw 链接直接一键执行。
-              </p>
-              <div class="mb-3 d-flex flex-wrap gap-2">
-                <span class="badge text-bg-dark">Shell</span>
-                <span class="badge text-bg-secondary">Linux</span>
-              </div>
-              <div class="d-flex flex-wrap gap-2">
-                <a class="btn btn-outline-secondary" href="https://github.com/Silentely/Demo" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-github me-2"></i>项目主页
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Nexus Terminal -->
-        <div class="col-12 col-md-6">
-          <div class="card project-card h-100 reveal">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <div class="icon-wrap me-3"><i class="fa-solid fa-laptop-code"></i></div>
-                <div>
-                  <h5 class="card-title mb-1">Nexus Terminal · 星枢终端</h5>
-                  <div class="small text-secondary">Web SSH / RDP / VNC 客户端</div>
+                <div class="footer-links">
+                    <a href="https://github.com/Silentely" target="_blank" rel="noopener" class="footer-link">
+                        <span>GITHUB</span>
+                        <span class="link-arrow">↗</span>
+                    </a>
+                    <a href="#" class="footer-link">
+                        <span>回到顶部</span>
+                        <span class="link-arrow">↑</span>
+                    </a>
                 </div>
-              </div>
-              <p class="card-text text-secondary mb-3">
-                现代化、功能丰富的远程连接客户端，支持 SSH/SFTP 多标签、RDP/VNC、Monaco 在线编辑、PWA、2FA 与人机验证等安全机制，并提供本地桌面端。
-              </p>
-              <div class="mb-3 d-flex flex-wrap gap-2">
-                <span class="badge text-bg-primary">SSH / SFTP</span>
-                <span class="badge text-bg-info">RDP / VNC</span>
-                <span class="badge text-bg-warning text-dark">PWA</span>
-                <span class="badge text-bg-dark">2FA</span>
-              </div>
-              <div class="d-flex flex-wrap gap-2">
-                <a class="btn btn-primary" href="https://github.com/Silentely/nexus-terminal/releases/latest" target="_blank" rel="noopener">
-                  <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>最新 Release
-                </a>
-                <a class="btn btn-outline-secondary" href="https://github.com/Silentely/nexus-terminal" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-github me-2"></i>项目主页
-                </a>
-              </div>
             </div>
-          </div>
-        </div>
-
-        <!-- fuckits -->
-        <div class="col-12 col-md-6">
-          <div class="card project-card h-100 reveal">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <div class="icon-wrap me-3"><i class="fa-solid fa-bolt"></i></div>
-                <div>
-                  <h5 class="card-title mb-1">fuckits</h5>
-                  <div class="small text-secondary">自然语言 → Shell 命令（AI CLI）</div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © <span id="year"></span> SILENTELY // ALL_RIGHTS_RESERVED
                 </div>
-              </div>
-              <p class="card-text text-secondary mb-3">
-                基于 AI 的命令行工具：把你的自然语言需求转换为可执行的 Shell 命令，并内置三级安全检测与交互式确认；支持中英文双语与跨平台安装。
-              </p>
-              <div class="mb-3 d-flex flex-wrap gap-2">
-                <span class="badge text-bg-dark">CLI</span>
-                <span class="badge text-bg-secondary">Shell</span>
-                <span class="badge text-bg-success">安全检测</span>
-                <span class="badge text-bg-info">双语</span>
-              </div>
-              <div class="d-flex flex-wrap gap-2">
-                <a class="btn btn-primary" href="https://fuckits.25500552.xyz/zh" target="_blank" rel="noopener">
-                  <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>一键安装
-                </a>
-                <a class="btn btn-outline-secondary" href="https://github.com/Silentely/fuckits" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-github me-2"></i>项目主页
-                </a>
-              </div>
+                <div class="footer-status">
+                    <span class="status-dot"></span>
+                    <span>SYSTEM_OPERATIONAL</span>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-
-      <hr class="my-5 opacity-10" />
-      <section class="text-center text-secondary small">
-        <p class="mb-1">以上“公共访问”链接来自各项目 README 与配置。</p>
-        <p class="mb-0">如链接更新，请以各项目仓库 README 为准。</p>
-      </section>
-    </main>
-
-    <footer class="py-4 border-top-subtle">
-      <div class="container d-flex flex-column flex-sm-row align-items-center justify-content-between gap-2">
-        <div class="small text-secondary">© <span id="year"></span> Silentely</div>
-        <div class="d-flex align-items-center gap-3 small">
-          <a class="text-decoration-none" href="https://github.com/Silentely" target="_blank" rel="noopener">
-            <i class="fa-brands fa-github me-1"></i>GitHub
-          </a>
-          <span class="text-secondary">·</span>
-          <a class="text-decoration-none" href="#top">回到顶部</a>
-        </div>
-      </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // 主题切换（记忆于 localStorage）
-      (function () {
-        const key = 'prefers-color-scheme';
-        const btn = document.getElementById('themeToggle');
-        const apply = (mode) => document.documentElement.setAttribute('data-bs-theme', mode);
-        const saved = localStorage.getItem(key);
-        if (saved) apply(saved);
-        btn?.addEventListener('click', () => {
-          const current = document.documentElement.getAttribute('data-bs-theme') || 'auto';
-          const next = current === 'dark' ? 'light' : 'dark';
-          apply(next);
-          localStorage.setItem(key, next);
-          btn.innerHTML = next === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-        });
-        // 初次渲染图标
-        btn.innerHTML = (saved === 'dark') ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-      })();
-
-      // Reveal 动效
-      (function () {
-        const els = document.querySelectorAll('.reveal');
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add('reveal-visible');
-              io.unobserve(e.target);
-            }
-          });
-        }, { threshold: 0.12 });
-        els.forEach((el) => io.observe(el));
-      })();
-
-      // 年份
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </body>
-  </html>
-
+    <script src="./projects.js"></script>
+</body>
+</html>
