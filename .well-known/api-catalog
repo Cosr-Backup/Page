@@ -1,0 +1,21 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://cosr.eu.org/",
+      "item": [
+        {
+          "rel": "service-desc",
+          "href": "https://cosr.eu.org/.well-known/api-catalog",
+          "type": "application/linkset+json",
+          "title": "Silentely Project Matrix - API Catalog"
+        },
+        {
+          "rel": "service-doc",
+          "href": "https://cosr.eu.org/",
+          "type": "text/html",
+          "title": "Project Homepage"
+        }
+      ]
+    }
+  ]
+}

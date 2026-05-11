@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agentskills.io/schemas/agent-skills-index-v0.2.0.json",
+  "name": "Silentely Project Matrix",
+  "description": "Agent Skills 发现索引，提供站点相关的技能描述与端点。",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "project-discovery",
+      "type": "navigation",
+      "description": "发现并列出 Silentely 项目矩阵中的所有可用项目，包括名称、描述、链接和技术栈。",
+      "url": "https://cosr.eu.org/.well-known/agent-skills/project-discovery.md",
+      "sha256": ""
+    },
+    {
+      "name": "sitemap",
+      "type": "discoverability",
+      "description": "提供站点所有公开页面的结构化列表。",
+      "url": "https://cosr.eu.org/sitemap.xml",
+      "sha256": ""
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/server-card.schema.json",
+  "serverInfo": {
+    "name": "Silentely Project Matrix",
+    "version": "1.0.0",
+    "description": "Silentely 的个人项目矩阵主页，展示 eSIM 工具集、Bili-Calendar、AdBlock-Acceleration、Demo 脚本工具箱、Nexus Terminal、fuckits 等项目的入口与信息。"
+  },
+  "transport": {
+    "type": "web",
+    "url": "https://cosr.eu.org/.well-known/mcp/server-card.json"
+  },
+  "capabilities": {
+    "tools": false,
+    "resources": true,
+    "prompts": false
+  },
+  "contact": {
+    "name": "Silentely",
+    "url": "https://github.com/Silentely"
+  }
+}
