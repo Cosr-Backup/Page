@@ -239,41 +239,6 @@ function updateYear() {
   }
 }
 
-// 初始化所有功能
-function init() {
-  // 粒子背景
-  const canvas = document.getElementById('particles');
-  if (canvas) {
-    new ParticleSystem(canvas);
-  }
-
-  // 卡片 3D 效果
-  new Card3DEffect();
-
-  // 导航栏滚动
-  new NavbarScroll();
-
-  // 平滑滚动
-  new SmoothScroll();
-
-  // 页面加载动画
-  new PageLoader();
-
-  // 更新年份
-  updateYear();
-
-  // 性能优化：减少重绘
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-}
-
 // WebMCP - 向 AI agent 暴露站点工具
 class WebMCPProvider {
   constructor() {
