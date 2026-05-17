@@ -6,18 +6,46 @@ class ParticleSystem {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     this.particles = [];
-    this.particleCount = 80;
+    this.particleCount = this.getParticleCount();
     this.connectionDistance = 150;
     this.mouse = { x: null, y: null, radius: 150 };
+    this.isActive = true;
+    this.animationId = null;
 
     this.init();
-    this.animate();
+    this.setupObserver();
     this.setupEventListeners();
+  }
+
+  // 响应式粒子密度：移动端减少粒子数量
+  getParticleCount() {
+    const width = window.innerWidth;
+    if (width < 480) return 30;
+    if (width < 768) return 50;
+    if (width < 1024) return 65;
+    return 80;
   }
 
   init() {
     this.resize();
     this.createParticles();
+    this.animate();
+  }
+
+  // IntersectionObserver：视口外暂停动画
+  setupObserver() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          this.isActive = entry.isIntersecting;
+          if (this.isActive && !this.animationId) {
+            this.animate();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(this.canvas);
   }
 
   resize() {
@@ -105,17 +133,28 @@ class ParticleSystem {
   }
 
   animate() {
+    if (!this.isActive) {
+      this.animationId = null;
+      return;
+    }
+
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.updateParticles();
     this.drawConnections();
     this.drawParticles();
-    requestAnimationFrame(() => this.animate());
+    this.animationId = requestAnimationFrame(() => this.animate());
   }
 
   setupEventListeners() {
+    // 防抖处理 resize 事件
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-      this.resize();
-      this.createParticles();
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        this.resize();
+        this.particleCount = this.getParticleCount();
+        this.createParticles();
+      }, 250);
     });
 
     window.addEventListener('mousemove', (e) => {
@@ -163,7 +202,7 @@ class Card3DEffect {
   }
 }
 
-// 导航栏滚动效果
+// 导航栏滚动效果 - 使用 CSS 类避免 Layout 抖动
 class NavbarScroll {
   constructor() {
     this.navbar = document.querySelector('.navbar');
@@ -172,20 +211,16 @@ class NavbarScroll {
   }
 
   init() {
-    window.addEventListener('scroll', () => this.handleScroll());
+    window.addEventListener('scroll', () => this.handleScroll(), { passive: true });
   }
 
   handleScroll() {
     const currentScroll = window.pageYOffset;
 
     if (currentScroll > 100) {
-      this.navbar.style.padding = '1rem 0';
-      this.navbar.style.background = 'rgba(10, 14, 26, 0.95)';
-      this.navbar.style.boxShadow = '0 4px 20px rgba(0, 217, 255, 0.1)';
+      this.navbar.classList.add('navbar-scrolled');
     } else {
-      this.navbar.style.padding = '1.5rem 0';
-      this.navbar.style.background = 'rgba(10, 14, 26, 0.8)';
-      this.navbar.style.boxShadow = 'none';
+      this.navbar.classList.remove('navbar-scrolled');
     }
 
     this.lastScroll = currentScroll;
